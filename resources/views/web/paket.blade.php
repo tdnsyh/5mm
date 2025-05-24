@@ -1,8 +1,272 @@
 <x-layout-web>
     <x-slot:title>{{ $title }}</x-slot:title>
     <x-navbar-web></x-navbar-web>
-    <div class="container py-2">
-        <h1>{{ $title }}</h1>
-    </div>
+
+    {{-- hero --}}
+    <section class="py-3 py-md-5">
+        <div class="container">
+            <div class="text-center">
+                <span class="badge text-bg-dark mb-2">Paket</span>
+                <h1 class="fw-bold">Paket yang kami sediakan</h1>
+                <hr>
+            </div>
+
+            <!-- Nav Tabs -->
+            <ul class="nav justify-content-center gap-2 mb-4" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="btn btn-outline-dark active rounded px-4 py-2" id="home-tab" data-bs-toggle="tab"
+                        data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane"
+                        aria-selected="true">Semua</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="btn btn-outline-dark rounded px-4 py-2" id="profile-tab" data-bs-toggle="tab"
+                        data-bs-target="#profile-tab-pane" type="button" role="tab"
+                        aria-controls="profile-tab-pane" aria-selected="false">Foto</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="btn btn-outline-dark rounded px-4 py-2" id="contact-tab" data-bs-toggle="tab"
+                        data-bs-target="#contact-tab-pane" type="button" role="tab"
+                        aria-controls="contact-tab-pane" aria-selected="false">Video</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="btn btn-outline-secondary rounded px-4 py-2" id="disabled-tab" data-bs-toggle="tab"
+                        data-bs-target="#disabled-tab-pane" type="button" role="tab"
+                        aria-controls="disabled-tab-pane" aria-selected="false">Foto & Video</button>
+                </li>
+            </ul>
+
+            <div class="tab-content text-center" id="myTabContent">
+                <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+                    tabindex="0">
+                    <div class="row row-cols-1 row-cols-md-4 justify-content-center">
+                        <div class="col">
+                            <div class="card border shadow-none">
+                                <div class="ratio ratio-4x3">
+                                    <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        class="card-img-top object-fit-cover rounded" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <span class="badge text-bg-info mb-2 mt-0">Paket</span>
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card’s content.</p>
+                                    <h3 class="fw-semibold">Rp. 1.000.000</h3>
+                                    <a href="/paket/detail" class="btn btn-primary w-100">Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card border shadow-none">
+                                <div class="ratio ratio-4x3">
+                                    <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        class="card-img-top object-fit-cover rounded" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <span class="badge text-bg-info mb-2 mt-0">Paket</span>
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card’s content.</p>
+                                    <h3 class="fw-semibold">Rp. 1.000.000</h3>
+                                    <a href="/paket/detail" class="btn btn-primary w-100">Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card border shadow-none">
+                                <div class="ratio ratio-4x3">
+                                    <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        class="card-img-top object-fit-cover rounded" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <span class="badge text-bg-info mb-2 mt-0">Paket</span>
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card’s content.</p>
+                                    <h3 class="fw-semibold">Rp. 1.000.000</h3>
+                                    <a href="/paket/detail" class="btn btn-primary w-100">Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card border shadow-none">
+                                <div class="ratio ratio-4x3">
+                                    <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        class="card-img-top object-fit-cover rounded" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <span class="badge text-bg-info mb-2 mt-0">Paket</span>
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card’s content.</p>
+                                    <h3 class="fw-semibold">Rp. 1.000.000</h3>
+                                    <a href="/paket/detail" class="btn btn-primary w-100">Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
+                    tabindex="0">
+                    <div class="row row-cols-1 row-cols-md-4 justify-content-center">
+                        <div class="col">
+                            <div class="card border shadow-none">
+                                <div class="ratio ratio-16x9">
+                                    <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        class="card-img-top object-fit-cover rounded" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <span class="badge text-bg-info mb-2 mt-0">Paket</span>
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card’s content.</p>
+                                    <p class="h3 text-danger fw-semibold mb-3 mt-0">Rp. 1.000.000</p>
+                                    <a href="#" class="btn btn-primary w-100">Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card border shadow-none">
+                                <div class="ratio ratio-16x9">
+                                    <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        class="card-img-top object-fit-cover rounded" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <span class="badge text-bg-info mb-2 mt-0">Paket</span>
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card’s content.</p>
+                                    <p class="h3 text-danger fw-semibold mb-3 mt-0">Rp. 1.000.000</p>
+                                    <a href="#" class="btn btn-primary w-100">Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card border shadow-none">
+                                <div class="ratio ratio-16x9">
+                                    <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        class="card-img-top object-fit-cover rounded" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <span class="badge text-bg-info mb-2 mt-0">Paket</span>
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card’s content.</p>
+                                    <p class="h3 text-danger fw-semibold mb-3 mt-0">Rp. 1.000.000</p>
+                                    <a href="#" class="btn btn-primary w-100">Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab"
+                    tabindex="0">
+                    <div class="row row-cols-1 row-cols-md-4 justify-content-center">
+                        <div class="col">
+                            <div class="card border shadow-none">
+                                <div class="ratio ratio-16x9">
+                                    <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        class="card-img-top object-fit-cover rounded" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <span class="badge text-bg-info mb-2 mt-0">Paket</span>
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card’s content.</p>
+                                    <p class="h3 text-danger fw-semibold mb-3 mt-0">Rp. 1.000.000</p>
+                                    <a href="#" class="btn btn-primary w-100">Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card border shadow-none">
+                                <div class="ratio ratio-16x9">
+                                    <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        class="card-img-top object-fit-cover rounded" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <span class="badge text-bg-info mb-2 mt-0">Paket</span>
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card’s content.</p>
+                                    <p class="h3 text-danger fw-semibold mb-3 mt-0">Rp. 1.000.000</p>
+                                    <a href="#" class="btn btn-primary w-100">Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card border shadow-none">
+                                <div class="ratio ratio-16x9">
+                                    <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        class="card-img-top object-fit-cover rounded" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <span class="badge text-bg-info mb-2 mt-0">Paket</span>
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card’s content.</p>
+                                    <p class="h3 text-danger fw-semibold mb-3 mt-0">Rp. 1.000.000</p>
+                                    <a href="#" class="btn btn-primary w-100">Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab"
+                    tabindex="0">
+                    <div class="row row-cols-1 row-cols-md-4 justify-content-center">
+                        <div class="col">
+                            <div class="card border shadow-none">
+                                <div class="ratio ratio-16x9">
+                                    <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        class="card-img-top object-fit-cover rounded" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <span class="badge text-bg-info mb-2 mt-0">Paket</span>
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card’s content.</p>
+                                    <p class="h3 text-danger fw-semibold mb-3 mt-0">Rp. 1.000.000</p>
+                                    <a href="#" class="btn btn-primary w-100">Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card border shadow-none">
+                                <div class="ratio ratio-16x9">
+                                    <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        class="card-img-top object-fit-cover rounded" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <span class="badge text-bg-info mb-2 mt-0">Paket</span>
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card’s content.</p>
+                                    <p class="h3 text-danger fw-semibold mb-3 mt-0">Rp. 1.000.000</p>
+                                    <a href="#" class="btn btn-primary w-100">Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card border shadow-none">
+                                <div class="ratio ratio-16x9">
+                                    <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        class="card-img-top object-fit-cover rounded" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <span class="badge text-bg-info mb-2 mt-0">Paket</span>
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card’s content.</p>
+                                    <p class="h3 text-danger fw-semibold mb-3 mt-0">Rp. 1.000.000</p>
+                                    <a href="#" class="btn btn-primary w-100">Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <x-footer-web></x-footer-web>
 </x-layout-web>

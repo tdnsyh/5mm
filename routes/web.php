@@ -35,6 +35,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/', [WebIndexController::class, 'index'])->name('home');
 Route::get('/tentang', [WebTentangController::class, 'index']);
 Route::get('/paket', [WebPaketController::class, 'index']);
+Route::get('/paket/detail', [WebPaketController::class, 'detailPaket']);
 Route::get('/portofolio', [WebPortofolioController::class, 'index']);
 Route::get('/artikel', [WebArtikelController::class, 'index']);
 Route::get('/keranjang', [WebKeranjangController::class, 'index']);
@@ -52,6 +53,6 @@ Route::middleware(['auth', RoleMiddleware::class . ':admin'])->group(function ()
     Route::resource('/admin/artikel', AdminArtikelController::class);
     Route::resource('/admin/portofolio', AdminPortofolioController::class);
     Route::get('/admin/testimoni', [AdminTestimoniController::class, 'index']);
-    Route::get('/admin/pengguna', [AdminPenggunaController::class, 'index']);
+    Route::resource('/admin/pengguna', AdminPenggunaController::class);
     Route::get('/admin/laporan', [AdminLaporanController::class, 'index']);
 });

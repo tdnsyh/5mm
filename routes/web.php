@@ -49,7 +49,7 @@ Route::middleware(['auth', RoleMiddleware::class . ':admin'])->group(function ()
     Route::get('/admin/jadwal', [AdminJadwalController::class, 'index']);
     Route::get('/admin/pesanan', [AdminPesananController::class, 'index']);
     Route::get('/admin/pembayaran', [AdminPembayaranController::class, 'index']);
-    Route::get('/admin/paket', [AdminPaketController::class, 'index']);
+    Route::resource('/admin/paket', AdminPaketController::class);
     Route::resource('/admin/artikel', AdminArtikelController::class);
     Route::resource('/admin/portofolio', AdminPortofolioController::class);
     Route::get('/admin/testimoni', [AdminTestimoniController::class, 'index']);

@@ -37,11 +37,15 @@ Route::get('/tentang', [WebTentangController::class, 'index']);
 Route::get('/paket', [WebPaketController::class, 'index']);
 Route::get('/paket/detail', [WebPaketController::class, 'detailPaket']);
 Route::get('/portofolio', [WebPortofolioController::class, 'index']);
-Route::get('/artikel', [WebArtikelController::class, 'index']);
-Route::get('/keranjang', [WebKeranjangController::class, 'index']);
-Route::get('/pesanan', [WebPesananController::class, 'index']);
-Route::get('/profil', [WebProfilController::class, 'index']);
+Route::get('/artikel', [WebArtikelController::class, 'index'])->name('daftar.berita');
+Route::get('/artikel/{kategori}/{id}/{judul}', [WebArtikelController::class, 'detail'])->name('detail.berita');
 
+Route::middleware(['auth', RoleMiddleware::class . ':user'])->group(function () {
+    Route::get('/keranjang', [WebProfilController::class, 'keranjang']);
+    Route::get('/pesanan', [WebProfilController::class, 'pesananSaya']);
+    Route::get('/profil', [WebProfilController::class, 'profil']);
+    Route::post('/profile', [WebProfilController::class, 'update'])->name('profile.update');
+});
 
 // route admin
 Route::middleware(['auth', RoleMiddleware::class . ':admin'])->group(function () {

@@ -166,20 +166,12 @@
                     cerita dengan kualitas dan kreativitas unggulan.</p>
             </div>
             <div class="masonry-columns">
-                <img src="https://images.unsplash.com/photo-1661336581000-b0c41a876950?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Foto 1" class="masonry-item">
-                <img src="https://plus.unsplash.com/premium_photo-1664801768830-46734d0f0848?q=80&w=1527&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Foto 2" class="masonry-item">
-                <img src="https://images.unsplash.com/photo-1693685232443-4a31a489159d?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Foto 3" class="masonry-item">
-                <img src="https://images.unsplash.com/photo-1737798388229-2524c7777c60?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Foto 4" class="masonry-item">
-                <img src="https://images.unsplash.com/photo-1671053264954-3a2999fb3ebd?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Foto 5" class="masonry-item">
-                <img src="https://images.unsplash.com/photo-1723492816147-7b202339079e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Foto 6" class="masonry-item">
-                <img src="https://images.unsplash.com/photo-1737798388229-2524c7777c60?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Foto 4" class="masonry-item">
+                @foreach ($portofolios as $portofolio)
+                    @foreach ($portofolio->photos as $foto)
+                        <img src="{{ asset('storage/' . $foto->path) }}" alt="{{ $portofolio->judul }}"
+                            class="masonry-item">
+                    @endforeach
+                @endforeach
             </div>
             <div class="text-center">
                 <a href="/portofolio" class="btn btn-outline-dark mt-3">Selengkapnya</a>
@@ -208,7 +200,7 @@
                     <a href="/detail-event" class="text-decoration-none">
                         <div class="card text-bg-dark border-0 shadow-none card-hover-dark">
                             <div class="ratio ratio-1x1">
-                                <img src="https://images.unsplash.com/photo-1519458246479-6acae7536988?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                <img src="https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                     class="card-img object-fit-cover" alt="...">
                             </div>
                             <div
@@ -224,7 +216,7 @@
                     <a href="/detail-event" class="text-decoration-none">
                         <div class="card text-bg-dark border-0 shadow-none card-hover-dark">
                             <div class="ratio ratio-1x1">
-                                <img src="https://images.unsplash.com/photo-1519458246479-6acae7536988?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                <img src="https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                     class="card-img object-fit-cover" alt="...">
                             </div>
                             <div
@@ -240,7 +232,7 @@
                     <a href="/detail-event" class="text-decoration-none">
                         <div class="card text-bg-dark border-0 shadow-none card-hover-dark">
                             <div class="ratio ratio-1x1">
-                                <img src="https://images.unsplash.com/photo-1519458246479-6acae7536988?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                <img src="https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                     class="card-img object-fit-cover" alt="...">
                             </div>
                             <div
@@ -256,7 +248,7 @@
                     <a href="/detail-event" class="text-decoration-none">
                         <div class="card text-bg-dark border-0 shadow-none card-hover-dark">
                             <div class="ratio ratio-1x1">
-                                <img src="https://images.unsplash.com/photo-1519458246479-6acae7536988?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                <img src="https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                     class="card-img object-fit-cover" alt="...">
                             </div>
                             <div
@@ -445,9 +437,17 @@
         <div class="container">
             <div class="row row-cols-1 row-cols-md-2">
                 <div class="col-md-8 col sticky-mobile-fix position-sticky" style="top: 6rem; height: fit-content;">
-                    <div class="ratio ratio-21x9">
-                        <img src="https://images.unsplash.com/photo-1733503711073-2b1c1357a949?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            alt="" class="img-fluid object-fit-cover rounded">
+                    <div id="artikelCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            @foreach ($artikels as $index => $artikel)
+                                <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                                    <div class="ratio ratio-21x9">
+                                        <img src="{{ asset('images/' . $artikel->gambar) }}"
+                                            class="img-fluid object-fit-cover rounded" alt="{{ $artikel->judul }}">
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
                     <span class="badge text-bg-dark mt-3">Blog</span>
                     <h1 class="mb-3 mt-2 text-white">Fotografi dan videografi adalah seni mengabadikan momen berharga
@@ -456,108 +456,23 @@
                         jepretan dan rekaman video!</p>
                 </div>
                 <div class="col-md-4 col scrollable-mobile-fix" style="overflow-y: auto;">
-                    <div class="card border-0 shadow-none">
-                        <div class="card-body">
-                            <span class="badge text-bg-warning mb-2">Fotografi</span>
-                            <h5 class="card-title">
-                                <a href="/detail-berita" class="text-decoration-none text-dark">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                </a>
-                            </h5>
-                            <p class="card-text">
-                                <small class="text-body-secondary">Last updated 3 mins ago</small>
-                            </p>
+                    @foreach ($artikelTerbaru as $artikel)
+                        <div class="card border-0 shadow-none">
+                            <div class="card-body p-4">
+                                <span class="badge text-bg-success">{{ $artikel->kategori }}</span>
+                                <p class="text-muted mb-1 mt-2">
+                                    <i
+                                        class="bi bi-calendar me-2"></i>{{ \Carbon\Carbon::parse($artikel->created_at)->format('d F Y') }}
+                                </p>
+                                <a href="{{ route('detail.berita', ['kategori' => Str::slug($artikel->kategori), 'id' => $artikel->id, 'judul' => Str::slug($artikel->judul)]) }}"
+                                    class="text-decoration-none text-dark card-title">{{ Str::limit($artikel->judul, 60) }}</a>
+                            </div>
+                            <div class="ratio ratio-16x9">
+                                <img src="{{ asset('images/' . $artikel->gambar) }}" alt=""
+                                    class="card-img-bottom object-fit-cover">
+                            </div>
                         </div>
-                        <div class="ratio ratio-16x9">
-                            <img src="https://images.unsplash.com/photo-1566532121931-d7b650e8fc93?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                class="card-img-bottom object-fit-cover" alt="...">
-                        </div>
-                    </div>
-                    <div class="card border-0 shadow-none">
-                        <div class="card-body">
-                            <span class="badge text-bg-danger mb-2">Videografi</span>
-                            <h5 class="card-title">
-                                <a href="/detail-berita" class="text-decoration-none text-dark">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                </a>
-                            </h5>
-                            <p class="card-text">
-                                <small class="text-body-secondary">Last updated 3 mins ago</small>
-                            </p>
-                        </div>
-                        <div class="ratio ratio-16x9">
-                            <img src="https://images.unsplash.com/photo-1566532121931-d7b650e8fc93?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                class="card-img-bottom object-fit-cover" alt="...">
-                        </div>
-                    </div>
-                    <div class="card border-0 shadow-none">
-                        <div class="card-body">
-                            <span class="badge text-bg-warning mb-2">Fotografi</span>
-                            <h5 class="card-title">
-                                <a href="/detail-berita" class="text-decoration-none text-dark">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                </a>
-                            </h5>
-                            <p class="card-text">
-                                <small class="text-body-secondary">Last updated 3 mins ago</small>
-                            </p>
-                        </div>
-                        <div class="ratio ratio-16x9">
-                            <img src="https://images.unsplash.com/photo-1566532121931-d7b650e8fc93?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                class="card-img-bottom object-fit-cover" alt="...">
-                        </div>
-                    </div>
-                    <div class="card border-0 shadow-none">
-                        <div class="card-body">
-                            <span class="badge text-bg-warning mb-2">Fotografi</span>
-                            <h5 class="card-title">
-                                <a href="/detail-berita" class="text-decoration-none text-dark">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                </a>
-                            </h5>
-                            <p class="card-text">
-                                <small class="text-body-secondary">Last updated 3 mins ago</small>
-                            </p>
-                        </div>
-                        <div class="ratio ratio-16x9">
-                            <img src="https://images.unsplash.com/photo-1566532121931-d7b650e8fc93?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                class="card-img-bottom object-fit-cover" alt="...">
-                        </div>
-                    </div>
-                    <div class="card border-0 shadow-none">
-                        <div class="card-body">
-                            <span class="badge text-bg-danger mb-2">Videografi</span>
-                            <h5 class="card-title">
-                                <a href="/detail-berita" class="text-decoration-none text-dark">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                </a>
-                            </h5>
-                            <p class="card-text">
-                                <small class="text-body-secondary">Last updated 3 mins ago</small>
-                            </p>
-                        </div>
-                        <div class="ratio ratio-16x9">
-                            <img src="https://images.unsplash.com/photo-1566532121931-d7b650e8fc93?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                class="card-img-bottom object-fit-cover" alt="...">
-                        </div>
-                    </div>
-                    <div class="card border-0 shadow-none">
-                        <div class="card-body">
-                            <span class="badge text-bg-warning mb-2">Fotografi</span>
-                            <h5 class="card-title">
-                                <a href="/detail-berita" class="text-decoration-none text-dark">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                </a>
-                            </h5>
-                            <p class="card-text">
-                                <small class="text-body-secondary">Last updated 3 mins ago</small>
-                            </p>
-                        </div>
-                        <div class="ratio ratio-16x9">
-                            <img src="https://images.unsplash.com/photo-1566532121931-d7b650e8fc93?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                class="card-img-bottom object-fit-cover" alt="...">
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
             <a href="/artikel" class="btn btn-light">Lainnya</a>

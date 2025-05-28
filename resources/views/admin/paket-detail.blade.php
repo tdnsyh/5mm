@@ -13,7 +13,8 @@
                 <h6 class="mt-3">Foto-foto:</h6>
                 <div class="d-flex flex-wrap">
                     @foreach ($paket->fotos as $foto)
-                        <img src="{{ asset('storage/' . $foto->path) }}" class="me-2 mb-2" style="width: 200px;">
+                        <img src="{{ asset('storage/' . $foto->path) }}" class="me-2 mb-2 rounded"
+                            style="width: 250px;">
                     @endforeach
                 </div>
 

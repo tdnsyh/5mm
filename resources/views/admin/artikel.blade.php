@@ -3,7 +3,7 @@
     <div class="card">
         <div class="card-body">
             <h3 class="fw-semibold">{{ $title }}</h3>
-            <div class="tombol mt-4">
+            <div class="tombol mt-3">
                 <a href="{{ route('artikel.create') }}" class="btn btn-primary mb-3">Tambah Artikel</a>
             </div>
             @if ($artikel->isEmpty())
@@ -14,16 +14,15 @@
                 <div class="row">
                     @foreach ($artikel as $a)
                         <div class="col-md-4">
-                            <div class="card h-100">
+                            <div class="card h-100 border shadow-none">
                                 @if ($a->gambar)
                                     <div class="ratio ratio-16x9">
                                         <img src="{{ asset('images/' . $a->gambar) }}"
-                                            class="card-img-top object-fit-cover" alt="Gambar Artikel">
+                                            class="img-fluid object-fit-cover rounded" alt="Gambar Artikel">
                                     </div>
                                 @endif
-                                <div class="card-body d-flex flex-column">
+                                <div class="card-body d-flex flex-column justify-content-between">
                                     <h5 class="card-title">{{ $a->judul }}</h5>
-                                    <div class="flex-grow-1"></div>
                                     <p class="card-text mb-2">
                                         <strong>Penulis:</strong> {{ $a->penulis }}<br>
                                         <strong>Kategori:</strong> {{ $a->kategori }}

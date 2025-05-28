@@ -30,9 +30,15 @@
                     </div>
 
                     <div class="mb-3">
+                        <label for="deskripsi" class="form-label">Deskripsi</label>
+                        <div id="deskripsi" name="deskripsi">{{ old('deskripsi', $paket->deskripsi ?? '') }}</div>
+                        <input type="hidden" id="hidden-deskripsi" name="deskripsi" required>
+                    </div>
+                    {{--
+                    <div class="mb-3">
                         <label class="form-label">Deskripsi</label>
                         <textarea name="deskripsi" class="form-control" rows="3">{{ old('deskripsi', $paket->deskripsi ?? '') }}</textarea>
-                    </div>
+                    </div> --}}
 
                     <div class="mb-3">
                         <label class="form-label">Harga</label>
@@ -61,4 +67,46 @@
             </div>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.js"></script>
+    <script>
+        var $summer = jQuery.noConflict(true);
+
+        $summer(document).ready(function() {
+            $summer('#deskripsi').summernote({
+                placeholder: 'Tulis berita Anda di sini...',
+                tabsize: 2,
+                height: 200,
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'italic', 'underline', 'clear']],
+                    ['fontsize', ['fontsize']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['table', ['table']],
+                    ['insert', ['link', 'picture', 'video']],
+                    ['view', ['fullscreen', 'codeview', 'help']]
+                ]
+            });
+
+            $summer('form').on('submit', function(e) {
+                var isiBerita = $summer('#deskripsi').summernote('code');
+
+                if ($summer('#hidden-deskripsi').length === 0) {
+                    $summer('<input>').attr({
+                        type: 'hidden',
+                        id: 'hidden-deskripsi',
+                        name: 'deskripsi',
+                        value: isiBerita
+                    }).appendTo('form');
+                } else {
+                    $summer('#hidden-deskripsi').val(isiBerita);
+                }
+            });
+        });
+    </script>
 </x-layout-admin>

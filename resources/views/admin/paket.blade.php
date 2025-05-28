@@ -43,10 +43,13 @@
                                         </div>
                                     @endif
                                     <div class="card-body">
-
-                                        <h5 class="card-title">{{ $paket->nama }} ({{ $paket->kategori }})</h5>
-                                        <p class="card-text">{{ $paket->deskripsi }}</p>
-                                        <p class="card-text fw-bold">Rp {{ number_format($paket->harga) }}</p>
+                                        <p>
+                                            <span class="badge bg-primary">{{ $paket->type }}</span>
+                                            <span class="badge bg-info">{{ $paket->kategori }}</span>
+                                        </p>
+                                        <h5 class="card-title">{{ $paket->nama }}</h5>
+                                        <p class="h4 card-text fw-semibold mb-2">Rp {{ number_format($paket->harga) }}
+                                        </p>
 
                                         <a href="{{ route('paket.show', $paket) }}"
                                             class="btn btn-sm btn-info">Detail</a>

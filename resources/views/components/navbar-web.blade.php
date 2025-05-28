@@ -16,20 +16,6 @@
                         <a class="nav-link {{ Request::is('tentang') ? 'active' : '' }}"
                             href="{{ url('/tentang') }}">Tentang</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="layananDropdown" role="button"
-                            data-bs-toggle="dropdown">
-                            Layanan
-                        </a>
-                        <ul class="dropdown-menu border-0 bg-body-tertiary shadow-none">
-                            <li><a class="dropdown-item" href="{{ url('/layanan/video-pernikahan') }}">Foto & Video
-                                    Pernikahan</a></li>
-                            <li><a class="dropdown-item" href="{{ url('/layanan/prewedding') }}">Prewedding</a></li>
-                            <li><a class="dropdown-item" href="{{ url('/layanan/foto-produk') }}">Foto Produk</a></li>
-                            <li><a class="dropdown-item" href="{{ url('/layanan/graduation') }}">Graduation</a></li>
-                            <li><a class="dropdown-item" href="{{ url('/layanan/event') }}">Event</a></li>
-                        </ul>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link {{ Request::is('paket') ? 'active' : '' }}"
                             href="{{ url('/paket') }}">Paket</a>

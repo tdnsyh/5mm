@@ -4,16 +4,19 @@ namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Paket;
 
 class WebPaketController extends Controller
 {
     public function  index(){
         $title = 'Paket';
-        return view('web.paket', compact('title'));
+        $pakets = Paket::with('fotos')->get();
+        return view('web.paket', compact('title','pakets'));
     }
 
-    public function  detailPaket(){
+    public function  show($id){
         $title = 'Detail Paket';
-        return view('web.paket-detail', compact('title'));
+        $paket = Paket::with('fotos')->findOrFail($id);
+        return view('web.paket-detail', compact('title','paket'));
     }
 }

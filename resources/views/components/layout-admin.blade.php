@@ -90,13 +90,6 @@
                                         <span class="hide-menu">Portofolio</span>
                                     </a>
                                 </li>
-                                <li class="sidebar-item">
-                                    <a class="sidebar-link @if (request()->is('admin/testimoni*')) active @endif"
-                                        href="/admin/testimoni">
-                                        <span><i class="ti ti-message-dots"></i></span>
-                                        <span class="hide-menu">Testimoni</span>
-                                    </a>
-                                </li>
                                 <li class="nav-small-cap">
                                     <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                                     <span class="hide-menu">Manajemen</span>
@@ -197,6 +190,29 @@
             </div>
         </main>
     </div>
+
+    @if (session('success'))
+        <div class="alert alert-success alert-dismissible fade show position-fixed bottom-0 end-0 m-4" role="alert"
+            style="z-index: 9999;">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
+    @if (session('error'))
+        <div class="alert alert-danger alert-dismissible fade show position-fixed bottom-0 end-0 m-4" role="alert"
+            style="z-index: 9999;">
+            {{ session('error') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
+    <script>
+        setTimeout(() => {
+            const alert = bootstrap.Alert.getOrCreateInstance(document.querySelector('.alert'));
+            alert.close();
+        }, 5000); // 5 detik
+    </script>
 
     <script src="{{ asset('assets/libs/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>

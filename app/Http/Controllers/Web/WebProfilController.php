@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Web;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use App\Models\User;
 use App\Models\UserData;
 
 class WebProfilController extends Controller
@@ -37,15 +35,5 @@ class WebProfilController extends Controller
         );
 
         return redirect()->back()->with('success', 'Profil berhasil diperbarui.');
-    }
-
-    public function  keranjang(){
-        $title = 'Keranjang saya';
-        return view('web.keranjang', compact('title'));
-    }
-
-    public function  pesananSaya(){
-        $title = 'Pesanan Saya';
-        return view('web.pesanan', compact('title'));
     }
 }

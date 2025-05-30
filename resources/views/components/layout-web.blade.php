@@ -20,6 +20,29 @@
         </main>
     </div>
 
+    @if (session('success'))
+        <div class="alert alert-success alert-dismissible fade show position-fixed bottom-0 end-0 m-4" role="alert"
+            style="z-index: 9999;">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
+    @if (session('error'))
+        <div class="alert alert-danger alert-dismissible fade show position-fixed bottom-0 end-0 m-4" role="alert"
+            style="z-index: 9999;">
+            {{ session('error') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
+    <script>
+        setTimeout(() => {
+            const alert = bootstrap.Alert.getOrCreateInstance(document.querySelector('.alert'));
+            alert.close();
+        }, 5000); // 5 detik
+    </script>
+
     <script src="{{ asset('assets/libs/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('assets/js/sidebarmenu.js') }}"></script>

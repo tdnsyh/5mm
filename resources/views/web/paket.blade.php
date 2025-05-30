@@ -10,8 +10,52 @@
                 <h1 class="fw-bold">Paket yang kami sediakan</h1>
                 <hr>
             </div>
+
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+                @foreach ($pakets as $paket)
+                    <div class="col">
+                        <div class="card mb-3 border shadow-none">
+                            @if ($paket->fotos->count() > 0)
+                                <div id="carouselPaket{{ $paket->id }}" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        @foreach ($paket->fotos as $index => $foto)
+                                            <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                                                <div class="ratio ratio-16x9">
+                                                    <img src="{{ asset('storage/' . $foto->path) }}"
+                                                        class="d-block w-100 object-fit-cover rounded">
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                    @if ($paket->fotos->count() > 1)
+                                        <button class="carousel-control-prev" type="button"
+                                            data-bs-target="#carouselPaket{{ $paket->id }}" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon"></span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button"
+                                            data-bs-target="#carouselPaket{{ $paket->id }}" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon"></span>
+                                        </button>
+                                    @endif
+                                </div>
+                            @endif
+                            <div class="card-body">
+                                <p>
+                                    <span class="badge bg-primary">{{ $paket->type }}</span>
+                                    <span class="badge bg-info">{{ $paket->kategori }}</span>
+                                </p>
+                                <h5 class="card-title">{{ $paket->nama }}</h5>
+                                <p class="h4 card-text fw-semibold mb-2">Rp {{ number_format($paket->harga) }}
+                                </p>
+                                <a href="{{ route('paket.detail', $paket->id) }}"
+                                    class="btn btn-outline-info w-100 mt-2">Lihat</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
             <!-- Nav Tabs -->
-            <ul class="nav justify-content-center gap-2 mb-4" id="myTab" role="tablist">
+            {{-- <ul class="nav justify-content-center gap-2 mb-4" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
                     <button class="btn btn-outline-secondary active rounded px-4 py-2" id="home-tab"
                         data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab"
@@ -649,7 +693,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </section>
 

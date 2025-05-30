@@ -12,8 +12,9 @@ class UserData extends Model
     protected $table = 'user_data';
 
     protected $fillable = [
-        'portofolio_id',
-        'path',
+        'user_id',
+        'telepon',
+        'alamat'
     ];
 
     public function user()

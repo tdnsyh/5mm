@@ -13,13 +13,10 @@ return new class extends Migration
     {
         Schema::create('user_data', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->unique();
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->string('telepon')->nullable();
             $table->text('alamat')->nullable();
-            $table->date('tanggal_lahir')->nullable();
             $table->timestamps();
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

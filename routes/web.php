@@ -40,32 +40,33 @@ Route::get('/artikel/{kategori}/{id}/{judul}', [WebArtikelController::class, 'de
 
 Route::middleware(['auth', RoleMiddleware::class . ':user'])->group(function () {
     // keranjang
-    Route::get('/keranjang', [WebKeranjangController::class, 'index'])->name('keranjang.index');
-    Route::post('/keranjang/tambah/{id}', [WebKeranjangController::class, 'tambah'])->name('keranjang.tambah');
-    Route::delete('/keranjang/hapus/{id}', [WebKeranjangController::class, 'hapus'])->name('keranjang.hapus');
+    Route::get('/keranjang', [WebKeranjangController::class, 'index'])->name('user.keranjang');
+    Route::post('/keranjang/tambah/{id}', [WebKeranjangController::class, 'tambah'])->name('user.keranjang.tambah');
+    Route::delete('/keranjang/hapus/{id}', [WebKeranjangController::class, 'hapus'])->name('user.keranjang.hapus');
     // pesanan
-    Route::get('/pesanan', [WebKeranjangController::class, 'pesananSaya'])->name('reservasi.index');
-    Route::post('/pesanan', [WebKeranjangController::class, 'store'])->name('reservasi.store');
-    Route::get('/pesanan/{paket}', [WebKeranjangController::class, 'create'])->name('reservasi.form');
-    Route::get('/pesanan/bayar/{id}', [WebKeranjangController::class, 'formPembayaran'])->name('reservasi.bayar.form');
-    Route::post('/pesanan/bayar/{id}', [WebKeranjangController::class, 'prosesPembayaran'])->name('reservasi.bayar.proses');
+    Route::get('/pesanan', [WebKeranjangController::class, 'pesananSaya'])->name('user.pesanan');
+    Route::get('/pesanan/{paket}', [WebKeranjangController::class, 'create'])->name('user.pesanan.form');
+    Route::post('/pesanan/store', [WebKeranjangController::class, 'store'])->name('user.pesanan.store');
+    Route::get('/pesanan/bayar/{id}', [WebKeranjangController::class, 'formPembayaran'])->name('user.bayar.form');
+    Route::post('/pesanan/bayar/{id}', [WebKeranjangController::class, 'prosesPembayaran'])->name('user.bayar.proses');
     // testimoni
-    Route::post('/testimoni/{id}', [WebKeranjangController::class, 'storeTestimoni'])->name('testimoni.store');
-    Route::get('/testimoni/{id}/form', [WebKeranjangController::class, 'createTestimoni'])->name('testimoni.form');
+    Route::post('/testimoni/{id}', [WebKeranjangController::class, 'storeTestimoni'])->name('user.testimoni.store');
+    Route::get('/testimoni/{id}/form', [WebKeranjangController::class, 'createTestimoni'])->name('user.testimoni.form');
     // profil
-    Route::get('/profil', [WebProfilController::class, 'profil'])->name('profile.index');
-    Route::post('/profile', [WebProfilController::class, 'update'])->name('profile.update');
+    Route::get('/profil', [WebProfilController::class, 'profil'])->name('user.profile.index');
+    Route::post('/profile', [WebProfilController::class, 'update'])->name('user.profile.update');
 });
 
 // route admin
 Route::middleware(['auth', RoleMiddleware::class . ':admin'])->group(function () {
     Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard.index');
-    Route::get('/admin/jadwal', [AdminJadwalController::class, 'index']);
-    Route::get('/admin/pesanan', [AdminPesananController::class, 'index']);
+    Route::get('/admin/jadwal', [AdminJadwalController::class, 'index'])->name('admin.jadwal');
+    Route::get('/admin/jadwal/data', [AdminJadwalController::class, 'getData']);
     // pesanan
-    Route::get('/admin/pesanan/{id}', [AdminPesananController::class, 'show'])->name('admin.reservasi.show');
-    Route::post('/admin/pesanan/{id}/update', [AdminPesananController::class, 'update'])->name('admin.reservasi.update');
-    Route::post('/admin/pesanan/konfirmasi/{id}', [AdminPesananController::class, 'konfirmasi'])->name('admin.reservasi.konfirmasi');
+    Route::get('/admin/pesanan', [AdminPesananController::class, 'index'])->name('admin.pesanan');
+    Route::get('/admin/pesanan/{id}', [AdminPesananController::class, 'show'])->name('admin.pesanan.show');
+    Route::post('/admin/pesanan/{id}/update', [AdminPesananController::class, 'update'])->name('admin.pesanan.update');
+    Route::post('/admin/pesanan/konfirmasi/{id}', [AdminPesananController::class, 'konfirmasi'])->name('admin.pesanan.konfirmasi');
     // pembayaran
     Route::get('/admin/pembayaran', [AdminPembayaranController::class, 'index']);
     Route::resource('/admin/paket', AdminPaketController::class);

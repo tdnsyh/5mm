@@ -21,7 +21,7 @@
     </div>
 
     @if (session('success'))
-        <div class="alert alert-success alert-dismissible fade show position-fixed bottom-0 end-0 m-4" role="alert"
+        <div class="alert alert-success alert-dismissible fade show position-fixed bottom-0 end-0 m-4" role="ee"
             style="z-index: 9999;">
             {{ session('success') }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -29,7 +29,7 @@
     @endif
 
     @if (session('error'))
-        <div class="alert alert-danger alert-dismissible fade show position-fixed bottom-0 end-0 m-4" role="alert"
+        <div class="alert alert-danger alert-dismissible fade show position-fixed bottom-0 end-0 m-4" role="ee"
             style="z-index: 9999;">
             {{ session('error') }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -38,7 +38,7 @@
 
     <script>
         setTimeout(() => {
-            const alert = bootstrap.Alert.getOrCreateInstance(document.querySelector('.alert'));
+            const alert = bootstrap.Alert.getOrCreateInstance(document.querySelector('.ee'));
             alert.close();
         }, 5000); // 5 detik
     </script>

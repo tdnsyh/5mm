@@ -29,14 +29,15 @@
                                 <td>Rp {{ number_format($item->paket->harga) }}</td>
                                 <td>
                                     <div class="d-flex flex-column flex-md-row gap-2">
-                                        <form action="{{ route('keranjang.hapus', $item->id) }}" method="POST">
+                                        <form action="{{ route('user.keranjang.hapus', $item->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn btn-outline-danger">
                                                 <i class="bi bi-trash"></i> Hapus
                                             </button>
                                         </form>
-                                        <a href="{{ route('reservasi.form', $item->paket->id) }}" class="btn btn-info">
+                                        <a href="{{ route('user.pesanan.form', $item->paket->id) }}"
+                                            class="btn btn-info">
                                             <i class="bi bi-cart"></i> Reservasi
                                         </a>
                                     </div>

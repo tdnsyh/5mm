@@ -13,14 +13,64 @@
 
                     <div class="mb-3">
                         <label class="form-label">Type</label>
-                        <input type="text" name="type" class="form-control"
-                            value="{{ old('type', $paket->type ?? '') }}" required>
+                        <select name="type" class="form-control" required>
+                            <option value="">Pilih Type</option>
+                            <option value="foto" {{ old('type', $paket->type ?? '') == 'foto' ? 'selected' : '' }}>
+                                Foto</option>
+                            <option value="video" {{ old('type', $paket->type ?? '') == 'video' ? 'selected' : '' }}>
+                                Video</option>
+                            <option value="combo" {{ old('type', $paket->type ?? '') == 'combo' ? 'selected' : '' }}>
+                                Combo (Foto & Video)</option>
+                        </select>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Kategori</label>
-                        <input type="text" name="kategori" class="form-control"
-                            value="{{ old('kategori', $paket->kategori ?? '') }}" required>
+                        <select name="kategori" class="form-control" required>
+                            <option value="">Pilih Kategori</option>
+                            <option value="wedding"
+                                {{ old('kategori', $paket->kategori ?? '') == 'wedding' ? 'selected' : '' }}>Wedding
+                            </option>
+                            <option value="prewedding"
+                                {{ old('kategori', $paket->kategori ?? '') == 'prewedding' ? 'selected' : '' }}>
+                                Prewedding</option>
+                            <option value="engagement"
+                                {{ old('kategori', $paket->kategori ?? '') == 'engagement' ? 'selected' : '' }}>
+                                Engagement</option>
+                            <option value="maternity"
+                                {{ old('kategori', $paket->kategori ?? '') == 'maternity' ? 'selected' : '' }}>Maternity
+                            </option>
+                            <option value="newborn"
+                                {{ old('kategori', $paket->kategori ?? '') == 'newborn' ? 'selected' : '' }}>Newborn
+                            </option>
+                            <option value="family"
+                                {{ old('kategori', $paket->kategori ?? '') == 'family' ? 'selected' : '' }}>Family
+                            </option>
+                            <option value="graduation"
+                                {{ old('kategori', $paket->kategori ?? '') == 'graduation' ? 'selected' : '' }}>
+                                Graduation</option>
+                            <option value="event"
+                                {{ old('kategori', $paket->kategori ?? '') == 'event' ? 'selected' : '' }}>Event
+                            </option>
+                            <option value="produk"
+                                {{ old('kategori', $paket->kategori ?? '') == 'produk' ? 'selected' : '' }}>Produk
+                            </option>
+                            <option value="corporate"
+                                {{ old('kategori', $paket->kategori ?? '') == 'corporate' ? 'selected' : '' }}>
+                                Corporate</option>
+                            <option value="profile"
+                                {{ old('kategori', $paket->kategori ?? '') == 'profile' ? 'selected' : '' }}>
+                                Personal/Company Profile</option>
+                            <option value="fashion"
+                                {{ old('kategori', $paket->kategori ?? '') == 'fashion' ? 'selected' : '' }}>Fashion
+                            </option>
+                            <option value="travel"
+                                {{ old('kategori', $paket->kategori ?? '') == 'travel' ? 'selected' : '' }}>Travel
+                            </option>
+                            <option value="dokumentasi"
+                                {{ old('kategori', $paket->kategori ?? '') == 'dokumentasi' ? 'selected' : '' }}>
+                                Dokumentasi</option>
+                        </select>
                     </div>
 
                     <div class="mb-3">
@@ -34,11 +84,6 @@
                         <div id="deskripsi" name="deskripsi">{{ old('deskripsi', $paket->deskripsi ?? '') }}</div>
                         <input type="hidden" id="hidden-deskripsi" name="deskripsi" required>
                     </div>
-                    {{--
-                    <div class="mb-3">
-                        <label class="form-label">Deskripsi</label>
-                        <textarea name="deskripsi" class="form-control" rows="3">{{ old('deskripsi', $paket->deskripsi ?? '') }}</textarea>
-                    </div> --}}
 
                     <div class="mb-3">
                         <label class="form-label">Harga</label>
@@ -48,8 +93,11 @@
 
                     <div class="mb-3">
                         <label class="form-label">Upload Foto (boleh lebih dari satu)</label>
-                        <input type="file" name="fotos[]" class="form-control" multiple>
+                        <input type="file" name="fotos[]" class="form-control" id="fotoInput" multiple
+                            accept="image/*">
                     </div>
+
+                    <div id="previewContainer" class="d-flex flex-wrap gap-2 mt-2"></div>
 
                     @if (isset($paket))
                         <div class="mb-3">
@@ -61,8 +109,10 @@
                         </div>
                     @endif
 
-                    <button type="submit" class="btn btn-success">Simpan</button>
-                    <a href="{{ route('paket.index') }}" class="btn btn-secondary">Batal</a>
+                    <div class="mt-3">
+                        <button type="submit" class="btn btn-success">Simpan</button>
+                        <a href="{{ route('paket.index') }}" class="btn btn-secondary">Batal</a>
+                    </div>
                 </form>
             </div>
         </div>
@@ -105,6 +155,60 @@
                     }).appendTo('form');
                 } else {
                     $summer('#hidden-deskripsi').val(isiBerita);
+                }
+            });
+        });
+    </script>
+    <script>
+        const fotoInput = document.getElementById('fotoInput');
+        const previewContainer = document.getElementById('previewContainer');
+
+        fotoInput.addEventListener('change', function() {
+            previewContainer.innerHTML = '';
+
+            Array.from(this.files).forEach((file, index) => {
+                if (file.type.startsWith('image/')) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const wrapper = document.createElement('div');
+                        wrapper.style.position = 'relative';
+                        wrapper.style.display = 'inline-block';
+
+                        const img = document.createElement('img');
+                        img.src = e.target.result;
+                        img.style.height = '150px';
+                        img.style.objectFit = 'cover';
+                        img.style.marginRight = '10px';
+
+                        const removeBtn = document.createElement('button');
+                        removeBtn.innerHTML = '&times;';
+                        removeBtn.type = 'button';
+                        removeBtn.style.position = 'absolute';
+                        removeBtn.style.top = '-5px';
+                        removeBtn.style.right = '-5px';
+                        removeBtn.style.background = 'red';
+                        removeBtn.style.color = 'white';
+                        removeBtn.style.border = 'none';
+                        removeBtn.style.borderRadius = '50%';
+                        removeBtn.style.width = '24px';
+                        removeBtn.style.height = '24px';
+                        removeBtn.style.cursor = 'pointer';
+                        removeBtn.title = 'Hapus foto ini';
+
+                        removeBtn.addEventListener('click', () => {
+                            wrapper.remove();
+                            const dataTransfer = new DataTransfer();
+                            Array.from(fotoInput.files).forEach((f, i) => {
+                                if (i !== index) dataTransfer.items.add(f);
+                            });
+                            fotoInput.files = dataTransfer.files;
+                        });
+
+                        wrapper.appendChild(img);
+                        wrapper.appendChild(removeBtn);
+                        previewContainer.appendChild(wrapper);
+                    };
+                    reader.readAsDataURL(file);
                 }
             });
         });

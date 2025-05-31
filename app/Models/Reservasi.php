@@ -14,10 +14,12 @@ class Reservasi extends Model
     protected $fillable = [
         'user_id',
         'paket_id',
-        'jumlah',
+        'kode_reservasi',
         'alamat',
+        'no_hp',
         'tanggal_reservasi',
         'status',
+        'total_harga',
         'status_pembayaran',
         'metode_pembayaran',
         'bukti_transfer'

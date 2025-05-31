@@ -28,8 +28,8 @@
                                         <td>{{ $r->tanggal_reservasi }}</td>
                                         <td>{{ $r->alamat }}</td>
                                         <td>
-                                            <form action="{{ route('admin.reservasi.konfirmasi', $r->id) }}"
-                                                method="POST" class="d-inline">
+                                            <form action="{{ route('admin.pesanan.konfirmasi', $r->id) }}" method="POST"
+                                                class="d-inline">
                                                 @csrf
                                                 <button name="aksi" value="diterima"
                                                     class="btn btn-success btn-sm">Terima</button>
@@ -82,7 +82,7 @@
                                             </span>
                                         </td>
                                         <td>
-                                            <a href="{{ route('admin.reservasi.show', $r->id) }}"
+                                            <a href="{{ route('admin.pesanan.show', $r->id) }}"
                                                 class="btn btn-info btn-sm">Detail</a>
                                         </td>
                                     </tr>

@@ -3,6 +3,11 @@
     <x-navbar-web></x-navbar-web>
     <section class="py-3 py-md-5">
         <div class="container">
+            <div class="mb-4">
+                <span class="badge text-bg-dark mb-2">Detail</span>
+                <h1>{{ $title }}</h1>
+                <hr>
+            </div>
             <div class="row">
                 <div class="col-md-6">
                     @if ($paket->fotos->count() > 0)
@@ -30,15 +35,15 @@
                         <span class="badge bg-info">{{ $paket->kategori }}</span>
                     </p>
                     <p style="text-align: justify">{!! $paket->deskripsi !!}</p>
-                    <h3 class="text-success fw-bold mb-3">Rp {{ number_format($paket->harga) }}</h3>
+                    <h2 class="text-danger fw-semibold mb-3">Rp {{ number_format($paket->harga) }}</h2>
 
                     <div class="d-flex gap-2 mb-2">
-                        <form action="{{ route('keranjang.tambah', $paket->id) }}" method="POST">
+                        <form action="{{ route('user.keranjang.tambah', $paket->id) }}" method="POST">
                             @csrf
                             <button type="submit" class="btn btn-outline-primary">Tambah ke Keranjang</button>
                         </form>
 
-                        <a href="{{ route('reservasi.form', $paket->id) }}" class="btn btn-primary">Reservasi
+                        <a href="{{ route('user.pesanan.form', $paket->id) }}" class="btn btn-primary">Reservasi
                             Sekarang</a>
                     </div>
                 </div>

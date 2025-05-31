@@ -52,7 +52,7 @@ class AdminPesananController extends Controller
         $reservasi->update(['status' => $request->status]);
         $reservasi->update(['status_pembayaran' => $request->status_pembayaran]);
 
-        return redirect()->route('admin.reservasi.show', $reservasi->id)->with('success', 'Status berhasil diperbarui.');
+        return redirect()->route('admin.pesanan', $reservasi->id)->with('success', 'Status berhasil diperbarui.');
     }
 
 }

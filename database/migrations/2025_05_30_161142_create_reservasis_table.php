@@ -15,9 +15,11 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('paket_id')->constrained('paket')->onDelete('cascade');
-            $table->integer('jumlah')->default(1);
+            $table->string('kode_reservasi');
             $table->date('tanggal_reservasi');
             $table->string('alamat');
+            $table->string('no_hp');
+            $table->decimal('total_harga', 15, 2);
             $table->enum('status', ['menunggu', 'diterima', 'ditolak','selesai'])->default('menunggu');
             $table->enum('status_pembayaran', ['belum', 'dibayar','diterima'])->default('belum');
             $table->enum('metode_pembayaran', ['transfer', 'cash'])->nullable();

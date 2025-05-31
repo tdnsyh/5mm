@@ -79,7 +79,7 @@
                                     </p>
 
                                     @if ($item->status == 'diterima' && $item->status_pembayaran == 'belum')
-                                        <a href="{{ route('reservasi.bayar.form', $item->id) }}"
+                                        <a href="{{ route('user.bayar.form', $item->id) }}"
                                             class="btn btn-success btn-sm mt-2">
                                             Bayar Sekarang
                                         </a>
@@ -152,7 +152,7 @@
                                                     {{ $item->testimoni->created_at->format('d M Y H:i') }}</p>
                                             </div>
                                         @else
-                                            <a href="{{ route('testimoni.form', $item->id) }}"
+                                            <a href="{{ route('user.testimoni.form', $item->id) }}"
                                                 class="btn btn-outline-primary btn-sm">
                                                 Kirim Testimoni
                                             </a>

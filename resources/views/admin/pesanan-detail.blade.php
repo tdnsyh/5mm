@@ -11,13 +11,15 @@
                         </div>
 
                         <div class="mb-3">
+                            <strong>Kode Reservasi:</strong> {{ $reservasi->kode_reservasi }} <br>
                             <strong>Paket:</strong> {{ $reservasi->paket->nama }} <br>
                             <strong>Tanggal Reservasi:</strong> {{ $reservasi->tanggal_reservasi }} <br>
-                            <strong>Jumlah:</strong> {{ $reservasi->jumlah }} <br>
+                            <strong>Jumlah:</strong> {{ $reservasi->no_hp }} <br>
                             <strong>Alamat:</strong> {{ $reservasi->alamat }} <br>
                             <strong>Status:</strong>
-                            <span class="badge bg-secondary">{{ $reservasi->status }}</span>
+                            <span class="badge bg-secondary mt-3">{{ $reservasi->status }}</span>
                         </div>
+                        <h3 class="mb-3"><strong>Jumlah:</strong> Rp. {{ $reservasi->total_harga }} </h3>
                     </div>
                     <div class="col">
                         <div class="mb-3">
@@ -57,7 +59,7 @@
                         </div>
                     </div>
                 @else
-                    <form action="{{ route('admin.reservasi.update', $reservasi->id) }}" method="POST" class="mb-3">
+                    <form action="{{ route('admin.pesanan.update', $reservasi->id) }}" method="POST" class="mb-3">
                         @csrf
                         <label for="status_pembayaran" class="form-label">Ubah Status Pembayaran:</label>
                         <select name="status_pembayaran" id="status_pembayaran" class="form-select mb-2" required>

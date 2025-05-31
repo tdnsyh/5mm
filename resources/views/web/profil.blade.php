@@ -8,11 +8,7 @@
                 <h1>Profil {{ $user->name }}</h1>
                 <hr>
             </div>
-            @if (session('success'))
-                <div class="alert alert-success">{{ session('success') }}</div>
-            @endif
-
-            <form action="{{ route('profile.update') }}" method="POST">
+            <form action="{{ route('user.profile.update') }}" method="POST">
                 @csrf
 
                 <div class="row row-cols-1 row-cols-md-2">

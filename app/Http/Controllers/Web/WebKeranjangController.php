@@ -39,7 +39,7 @@ class WebKeranjangController extends Controller
         ]);
     }
 
-    return redirect()->route('keranjang.index')->with('success', 'Paket ditambahkan ke keranjang.');
+    return redirect()->route('user.keranjang')->with('success', 'Paket ditambahkan ke keranjang.');
     }
 
     public function create($paketId)
@@ -54,26 +54,31 @@ class WebKeranjangController extends Controller
         $request->validate([
             'paket_id' => 'required|exists:paket,id',
             'tanggal_reservasi' => 'required|date|after_or_equal:today',
-            'jumlah' => 'required|integer|min:1',
             'alamat' => 'required|string|max:255',
+            'no_hp' => 'required|string|max:15',
         ]);
 
-        // Simpan reservasi baru
+        $userId = Auth::id();
+        $paket = Paket::findOrFail($request->paket_id);
+        $kodeReservasi = 'RSV-' . time() . '-' . $userId;
+        $totalHarga = $paket->harga;
+
         Reservasi::create([
-            'user_id' => Auth::id(),
+            'user_id' => $userId,
             'paket_id' => $request->paket_id,
             'tanggal_reservasi' => $request->tanggal_reservasi,
-            'jumlah' => $request->jumlah,
             'alamat' => $request->alamat,
+            'no_hp' => $request->no_hp,
+            'kode_reservasi' => $kodeReservasi,
+            'total_harga' => $totalHarga,
             'status' => 'menunggu',
         ]);
 
-        // Hapus dari keranjang (jika ada)
-        Keranjang::where('user_id', Auth::id())
+        Keranjang::where('user_id', $userId)
             ->where('paket_id', $request->paket_id)
             ->delete();
 
-        return redirect()->route('reservasi.index')->with('success', 'Reservasi berhasil ditambahkan. Menunggu konfirmasi admin.');
+        return redirect()->route('user.pesanan')->with('success', 'Reservasi berhasil ditambahkan. Menunggu konfirmasi admin.');
     }
 
     public function hapus($id)
@@ -143,7 +148,7 @@ class WebKeranjangController extends Controller
         'bukti_transfer' => $path,
     ]);
 
-    return redirect()->route('reservasi.index')->with('success', 'Pembayaran berhasil dikonfirmasi.');
+    return redirect()->route('user.pesanan')->with('success', 'Pembayaran berhasil dikonfirmasi.');
     }
 
     public function createTestimoni($id)
@@ -156,7 +161,7 @@ class WebKeranjangController extends Controller
             ->exists();
 
         if ($existing) {
-            return redirect()->route('reservasi.index')->with('warning', 'Anda sudah mengirim testimoni untuk pesanan ini.');
+            return redirect()->route('user.pesanan')->with('warning', 'Anda sudah mengirim testimoni untuk pesanan ini.');
         }
 
         return view('web.form-testimoni', compact('reservasi', 'title'));
@@ -171,7 +176,7 @@ class WebKeranjangController extends Controller
             ->exists();
 
         if ($exists) {
-            return redirect()->route('reservasi.index')->with('warning', 'Testimoni sudah pernah dikirim.');
+            return redirect()->route('user.pesanan')->with('warning', 'Testimoni sudah pernah dikirim.');
         }
 
         $request->validate([
@@ -186,7 +191,7 @@ class WebKeranjangController extends Controller
             'pesan' => $request->pesan,
         ]);
 
-        return redirect()->route('reservasi.index')->with('success', 'Testimoni berhasil dikirim.');
+        return redirect()->route('user.pesanan')->with('success', 'Testimoni berhasil dikirim.');
     }
 
 }

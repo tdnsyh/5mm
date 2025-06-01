@@ -13,8 +13,9 @@
                                         <img src="{{ asset('assets/images/logos/ddd.png') }}" width="100"
                                             alt="">
                                     </a>
-                                    <h3 class="fw-semibold">Pertama kali di sini?</h3>
-                                    <p>Daftar sekarang dan mulai ciptakan pengalaman event yang luar biasa.</p>
+                                    <h3 class="fw-semibold">Baru pertama kali di sini?</h3>
+                                    <p>Daftar sekarang dan mulai abadikan momen terbaikmu bersama jasa foto dan video
+                                        dari 5mm Project.</p>
                                     <form action="{{ route('register') }}" method="POST">
                                         @csrf
                                         <div class="mb-3">

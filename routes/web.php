@@ -73,4 +73,5 @@ Route::middleware(['auth', RoleMiddleware::class . ':admin'])->group(function ()
     Route::resource('/admin/portofolio', AdminPortofolioController::class);
     Route::resource('/admin/pengguna', AdminPenggunaController::class);
     Route::get('/admin/laporan', [AdminLaporanController::class, 'index']);
+    Route::get('/admin/laporan/filter', [AdminLaporanController::class, 'filter'])->name('laporan.filter');
 });

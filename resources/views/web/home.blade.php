@@ -4,62 +4,116 @@
     {{-- hero section --}}
     <section class="pt-3">
         <div class="container-fluid">
-            <div class="card text-bg-dark border-0 shadow-none">
+            <div class="d-block d-md-none">
+                <div class="ratio ratio-16x9 mb-3">
+                    <img src="https://images.unsplash.com/photo-1519458246479-6acae7536988?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Hero Mobile" class="img-fluid object-fit-cover rounded">
+                </div>
+                <div class="px-3">
+                    <h2 class="fw-bold">Abadikan setiap momen berharga bersama 5mm Project</h2>
+                    <p>Kami hadir dengan dedikasi tinggi dan kualitas visual terbaik untuk menciptakan
+                        dokumentasi yang tak terlupakan.</p>
+                    <hr class="fw-semibold">
+                    <div class="row row-cols-1">
+                        <div class="col">
+                            <div class="card border shadow-none rounded">
+                                <div class="card-body p-2">
+                                    <div class="row align-items-center">
+                                        <div class="col-4">
+                                            <div class="ratio ratio-1x1">
+                                                <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?q=80&w=1470&auto=format&fit=crop"
+                                                    alt="Prewedding" class="img-fluid object-fit-cover rounded">
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <p class="card-text  mb-0">Prewedding & Wedding
+                                                Photography dengan konsep cinematic dan natural light.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card border shadow-none rounded">
+                                <div class="card-body p-2">
+                                    <div class="row g-2 align-items-center">
+                                        <div class="col-4">
+                                            <div class="ratio ratio-1x1">
+                                                <img src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=1470&auto=format&fit=crop"
+                                                    alt="Event Dokumentasi" class="img-fluid object-fit-cover rounded">
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <p class="card-text mb-0">Dokumentasi acara formal dan
+                                                informal dengan gaya dokumenter profesional.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card text-bg-dark border-0 shadow-none d-none d-md-block">
                 <div class="ratio ratio-21x9">
                     <img src="https://images.unsplash.com/photo-1519458246479-6acae7536988?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        class="card-img object-fit-cover" alt="...">
+                        class="card-img object-fit-cover" alt="Fotografi Pernikahan">
                 </div>
                 <div class="card-img-overlay p-4 p-md-5 d-flex flex-column justify-content-between"
                     style="background: rgba(0,0,0,0.6);">
-                    <div class="col-md-8 text-center text-md-start mb-4">
+                    <div class="col-md-8 text-start mb-4">
                         <p class="display-3 fw-bold">
-                            Capturing beautiful moment inside lens and shutterspeed.
+                            Abadikan setiap momen berharga bersama 5mm Project.
                         </p>
                     </div>
-                    <div class="row g-4 d-none d-md-flex pt-5">
+                    <div class="row g-4 pt-5">
                         <div class="col-md-6">
                             <div class="d-flex flex-wrap gap-2">
-                                <a href="/" class="btn btn-outline-secondary rounded-5">Fotografi</a>
-                                <a href="/" class="btn btn-outline-secondary rounded-5">Videografi</a>
-                                <a href="/" class="btn btn-outline-secondary rounded-5">Graduation</a>
-                                <a href="/" class="btn btn-outline-secondary rounded-5">Wedding</a>
-                                <a href="/" class="btn btn-outline-secondary rounded-5">Prewedding</a>
-                                <a href="/" class="btn btn-outline-secondary rounded-5">Photo</a>
+                                <a href="/" class="btn btn-outline-light rounded-5">Prewedding</a>
+                                <a href="/" class="btn btn-outline-light rounded-5">Wedding</a>
+                                <a href="/" class="btn btn-outline-light rounded-5">Event</a>
+                                <a href="/" class="btn btn-outline-light rounded-5">Graduation</a>
+                                <a href="/" class="btn btn-outline-light rounded-5">Corporate</a>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <p>Lorem ipsum dolor sit amet.</p>
-                            <hr class="fw-semibold">
+                            <p>Kami hadir dengan dedikasi tinggi dan kualitas visual terbaik untuk menciptakan
+                                dokumentasi yang tak terlupakan.</p>
+                            <hr class="fw-semibold text-white">
                             <div class="row g-3">
                                 <div class="col-12 col-md-6">
-                                    <div class="card border-0 card-glass">
+                                    <div class="card border-0 bg-white bg-opacity-10 backdrop-blur shadow-none rounded">
                                         <div class="card-body p-2">
-                                            <div class="row g-2">
+                                            <div class="row g-2 align-items-center">
                                                 <div class="col-4">
                                                     <div class="ratio ratio-1x1">
-                                                        <img src="https://images.unsplash.com/photo-1744309546253-a1200c7e6141?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                                            alt="" class="img-fluid object-fit-cover rounded">
+                                                        <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?q=80&w=1470&auto=format&fit=crop"
+                                                            alt="Prewedding" class="img-fluid object-fit-cover rounded">
                                                     </div>
                                                 </div>
                                                 <div class="col-8">
-                                                    <p class="card-text text-white">Lorem ipsum dolor sit amet.</p>
+                                                    <p class="card-text text-white mb-0">Prewedding & Wedding
+                                                        Photography dengan konsep cinematic dan natural light.</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6">
-                                    <div class="card border-0 card-glass">
+                                    <div class="card border-0 bg-white bg-opacity-10 backdrop-blur shadow-none rounded">
                                         <div class="card-body p-2">
-                                            <div class="row g-2">
+                                            <div class="row g-2 align-items-center">
                                                 <div class="col-4">
                                                     <div class="ratio ratio-1x1">
-                                                        <img src="https://images.unsplash.com/photo-1744309546253-a1200c7e6141?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                                            alt="" class="img-fluid object-fit-cover rounded">
+                                                        <img src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=1470&auto=format&fit=crop"
+                                                            alt="Event Dokumentasi"
+                                                            class="img-fluid object-fit-cover rounded">
                                                     </div>
                                                 </div>
                                                 <div class="col-8">
-                                                    <p class="card-text text-white">Lorem ipsum dolor sit amet.</p>
+                                                    <p class="card-text text-white mb-0">Dokumentasi acara formal dan
+                                                        informal dengan gaya dokumenter profesional.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -74,7 +128,7 @@
     </section>
 
     {{-- tentang --}}
-    <section class="py-5">
+    <section class="py-3 py-md-5">
         <div class="container">
             <div class="card bg-2 border-0 shadow-none">
                 <div class="card-body p-0">
@@ -113,7 +167,7 @@
     </section>
 
     {{-- layanan --}}
-    <section class="py-5 bg-1">
+    <section class="py-3 py-md-5 bg-1">
         <div class="container">
             <div class="row row-cols-md-3 d-flex align-items-center">
                 <div class="col-12 col">
@@ -152,7 +206,7 @@
     </section>
 
     {{-- portofolio --}}
-    <section class="py-5">
+    <section class="py-3 py-md-5">
         <div class="container">
             <div class="text-center">
                 <span class="badge text-bg-dark mb-2">Portofolio</span>
@@ -176,7 +230,7 @@
     </section>
 
     {{-- paket --}}
-    <section class="py-5">
+    <section class="py-3 py-md-5">
         <div class="container">
             <div class="row row-cols-1 row-cols-md-2 d-flex justify-content-between align-items-end">
                 <div class="col">
@@ -191,81 +245,110 @@
                 </div>
             </div>
             <hr>
-            <div class="row row-cols-1 row-cols-md-4">
-                <div class="col">
-                    <a href="/detail-event" class="text-decoration-none">
-                        <div class="card text-bg-dark border-0 shadow-none card-hover-dark">
-                            <div class="ratio ratio-1x1">
-                                <img src="https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                    class="card-img object-fit-cover" alt="...">
-                            </div>
-                            <div
-                                class="card-img-overlay d-flex flex-column justify-content-end gradient-overlay-bottom">
-                                <p class="card-title text-white m-0">
-                                    Capturing beautiful moment inside lens and shutterspeed.
+            <div class="row">
+                @foreach ($pakets as $paket)
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+                        <div class="card shadow-none border w-100">
+                            @foreach ($paket->fotos as $index => $foto)
+                                <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                                    <div class="ratio ratio-16x9">
+                                        <img src="{{ asset('storage/' . $foto->path) }}"
+                                            class="d-block w-100 object-fit-cover rounded">
+                                    </div>
+                                </div>
+                            @endforeach
+                            <div class="card-body d-flex flex-column">
+                                <p>
+                                    <span class="badge bg-primary">{{ $paket->type }}</span>
+                                    <span class="badge bg-info">{{ $paket->kategori }}</span>
                                 </p>
+                                <h5 class="card-title">
+                                    <a class="text-decoration-none text-dark"
+                                        href="{{ route('paket.detail', $paket->id) }}">{{ $paket->nama }}</a>
+                                </h5>
+                                <p class="mt-auto h2 fw-semibold text-danger">Rp
+                                    {{ number_format($paket->harga, 0, ',', '.') }}</p>
                             </div>
                         </div>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="/detail-event" class="text-decoration-none">
-                        <div class="card text-bg-dark border-0 shadow-none card-hover-dark">
-                            <div class="ratio ratio-1x1">
-                                <img src="https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                    class="card-img object-fit-cover" alt="...">
-                            </div>
-                            <div
-                                class="card-img-overlay d-flex flex-column justify-content-end gradient-overlay-bottom">
-                                <p class="card-title text-white m-0">
-                                    Capturing beautiful moment inside lens and shutterspeed.
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="/detail-event" class="text-decoration-none">
-                        <div class="card text-bg-dark border-0 shadow-none card-hover-dark">
-                            <div class="ratio ratio-1x1">
-                                <img src="https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                    class="card-img object-fit-cover" alt="...">
-                            </div>
-                            <div
-                                class="card-img-overlay d-flex flex-column justify-content-end gradient-overlay-bottom">
-                                <p class="card-title text-white m-0">
-                                    Capturing beautiful moment inside lens and shutterspeed.
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="/detail-event" class="text-decoration-none">
-                        <div class="card text-bg-dark border-0 shadow-none card-hover-dark">
-                            <div class="ratio ratio-1x1">
-                                <img src="https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                    class="card-img object-fit-cover" alt="...">
-                            </div>
-                            <div
-                                class="card-img-overlay d-flex flex-column justify-content-end gradient-overlay-bottom">
-                                <p class="card-title text-white m-0">
-                                    Capturing beautiful moment inside lens and shutterspeed.
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                    </div>
+                @endforeach
             </div>
+
+            {{-- <div class="row row-cols-1 row-cols-md-4">
+                <div class="col">
+                    <a href="/detail-event" class="text-decoration-none">
+                        <div class="card text-bg-dark border-0 shadow-none card-hover-dark">
+                            <div class="ratio ratio-1x1">
+                                <img src="https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    class="card-img object-fit-cover" alt="...">
+                            </div>
+                            <div
+                                class="card-img-overlay d-flex flex-column justify-content-end gradient-overlay-bottom">
+                                <p class="card-title text-white m-0">
+                                    Capturing beautiful moment inside lens and shutterspeed.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="/detail-event" class="text-decoration-none">
+                        <div class="card text-bg-dark border-0 shadow-none card-hover-dark">
+                            <div class="ratio ratio-1x1">
+                                <img src="https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    class="card-img object-fit-cover" alt="...">
+                            </div>
+                            <div
+                                class="card-img-overlay d-flex flex-column justify-content-end gradient-overlay-bottom">
+                                <p class="card-title text-white m-0">
+                                    Capturing beautiful moment inside lens and shutterspeed.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="/detail-event" class="text-decoration-none">
+                        <div class="card text-bg-dark border-0 shadow-none card-hover-dark">
+                            <div class="ratio ratio-1x1">
+                                <img src="https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    class="card-img object-fit-cover" alt="...">
+                            </div>
+                            <div
+                                class="card-img-overlay d-flex flex-column justify-content-end gradient-overlay-bottom">
+                                <p class="card-title text-white m-0">
+                                    Capturing beautiful moment inside lens and shutterspeed.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="/detail-event" class="text-decoration-none">
+                        <div class="card text-bg-dark border-0 shadow-none card-hover-dark">
+                            <div class="ratio ratio-1x1">
+                                <img src="https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    class="card-img object-fit-cover" alt="...">
+                            </div>
+                            <div
+                                class="card-img-overlay d-flex flex-column justify-content-end gradient-overlay-bottom">
+                                <p class="card-title text-white m-0">
+                                    Capturing beautiful moment inside lens and shutterspeed.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div> --}}
         </div>
     </section>
 
     {{-- faq --}}
-    <section class="bg-2 py-5">
+    <section class="bg-2 py-3 py-md-5">
         <div class="container">
             <div class="text-center">
                 <span class="badge text-bg-dark mb-2">FaQ</span>
-                <h1>FAQ – Pertanyaan Umum tentang 5mm</h1>
+                <h1>FAQ – Frequently Asked Questions</h1>
                 <hr>
                 <p>Temukan jawaban atas pertanyaan yang paling sering diajukan mengenai layanan, proses pemesanan,
                     pembayaran, hingga hasil akhir dari tim 5mm.</p>
@@ -355,7 +438,7 @@
     </section>
 
     {{-- testimoni --}}
-    <section class="py-5">
+    <section class="py-3 py-md-5">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-5 mb-4 mb-md-0">
@@ -379,48 +462,23 @@
                     <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel"
                         data-bs-interval="5000">
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="p-4 rounded bg-light">
-                                    <p class="fs-5">“5mm.project berhasil menangkap momen pernikahan kami dengan
-                                        sangat indah. Hasilnya luar biasa!”</p>
-                                    <div class="d-flex align-items-center mt-4">
-                                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Avatar"
-                                            class="rounded-circle me-3" width="48" height="48">
-                                        <div>
-                                            <div class="fw-semibold">Anisa Putri</div>
-                                            <div class="text-muted small">Klien Pernikahan</div>
+                            @foreach ($testimoni as $index => $item)
+                                <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                                    <div class="p-4 rounded bg-light">
+                                        <p class="fs-5">“{{ $item->pesan }}”</p>
+                                        <div class="d-flex align-items-center mt-4">
+                                            <img src="{{ $item->user->avatar ?? 'https://randomuser.me/api/portraits/lego/1.jpg' }}"
+                                                alt="Avatar" class="rounded-circle me-3" width="48"
+                                                height="48">
+                                            <div>
+                                                <div class="fw-semibold">{{ $item->user->name }}</div>
+                                                <div class="text-muted small">
+                                                    {{ $item->reservasi->kategori ?? 'Klien' }}</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="p-4 rounded bg-light">
-                                    <p class="fs-5">“Video promosi bisnis kami jadi terlihat profesional banget!
-                                        Terima kasih tim 5mm.project.”</p>
-                                    <div class="d-flex align-items-center mt-4">
-                                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Avatar"
-                                            class="rounded-circle me-3" width="48" height="48">
-                                        <div>
-                                            <div class="fw-semibold">Reza Maulana</div>
-                                            <div class="text-muted small">Pemilik Usaha</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="p-4 rounded bg-light">
-                                    <p class="fs-5">“Setiap konten dokumentasi acara kami selalu memuaskan. Selalu
-                                        profesional dan tepat waktu.”</p>
-                                    <div class="d-flex align-items-center mt-4">
-                                        <img src="https://randomuser.me/api/portraits/men/64.jpg" alt="Avatar"
-                                            class="rounded-circle me-3" width="48" height="48">
-                                        <div>
-                                            <div class="fw-semibold">Bayu Nugroho</div>
-                                            <div class="text-muted small">Event Organizer</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -429,7 +487,7 @@
     </section>
 
     {{-- blog --}}
-    <section class="py-5 bg-1">
+    <section class="py-3 py-md-5 bg-1">
         <div class="container">
             <div class="row row-cols-1 row-cols-md-2">
                 <div class="col-md-8 col sticky-mobile-fix position-sticky" style="top: 6rem; height: fit-content;">
@@ -475,26 +533,50 @@
         </div>
     </section>
 
-    {{-- kontak --}}
-
     {{-- call to action --}}
-    <section class="py-5">
+    <section class="py-3 py-md-5 bg-secondary-subtle">
         <div class="container">
-            <div class="card bg-body-secondary border-0 shadow-none">
+            <div class="text-center py-3">
+                <span class="badge text-bg-dark mt-3">Kontak</span>
+                <h1 class="fw-semibold">Siap mengabadikan momenmu? Hubungi kami sekarang!</h1>
+                <p>Kami dari 5mm Project siap membantu mendokumentasikan momen berharga Anda, mulai dari
+                    prewedding, wedding, event, hingga konten brand. Konsultasi gratis dan respons cepat!</p>
+                <hr>
+            </div>
+            <div class="card border-0 shadow-none">
                 <div class="card-body">
-                    <div class="text-center py-3">
-                        <h1 class="fw-semibold">Siap mengabadikan momenmu? Hubungi kami sekarang!</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam laborum nisi tenetur!
-                            Sapiente ullam
-                            deserunt aspernatur architecto officiis vero dignissimos!</p>
-                        <a href="/" class="btn btn-outline-dark">Hubungi kami</a>
+                    <div class="row row-cols-1 row-cols-md-2">
+                        <div class="col">
+                            <img src="https://images.unsplash.com/photo-1520923642038-b4259acecbd7?q=80&w=2019&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="" class="img-fluid rounded object-fit-cover">
+                        </div>
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nama</label>
+                                <input type="text" class="form-control" id="name"
+                                    placeholder="Nama lengkap Anda" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email / WhatsApp</label>
+                                <input type="text" class="form-control" id="email"
+                                    placeholder="Email atau nomor WhatsApp" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Pesan / Jenis Layanan</label>
+                                <textarea class="form-control" id="message" rows="4"
+                                    placeholder="Contoh: Foto prewedding, dokumentasi event..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-dark px-4">Kirim Pesan</button>
+                            <p class="text-muted mt-3">
+                                Atau langsung hubungi kami melalui <a href="https://wa.me/6281234567890"
+                                    target="_blank">WhatsApp</a>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="mt-5">
-        <x-footer-web></x-footer-web>
-    </div>
+    <x-footer-web></x-footer-web>
 </x-layout-web>

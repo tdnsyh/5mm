@@ -8,7 +8,7 @@
             </div>
             @if ($artikel->isEmpty())
                 <div class="alert alert-warning" role="alert">
-                    Belum ada Berita.
+                    Belum ada artikel yang ditambahkan.
                 </div>
             @else
                 <div class="row">

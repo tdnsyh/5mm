@@ -26,4 +26,9 @@ class Testimoni extends Model
     {
         return $this->belongsTo(Paket::class);
     }
+
+    public function reservasi()
+    {
+        return $this->belongsTo(Reservasi::class);
+    }
 }

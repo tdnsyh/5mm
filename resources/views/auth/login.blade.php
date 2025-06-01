@@ -17,8 +17,9 @@
                                         <img src="{{ asset('/assets/images/logos/ddd.png') }}" width="100"
                                             alt="">
                                     </a>
-                                    <h3 class="fw-semibold">Selamat datang kembali!</h3>
-                                    <p>Masuk untuk mengelola dan menjelajahi event dengan lebih mudah.</p>
+                                    <h3 class="fw-semibold">Selamat datang kembali di 5mm Project!</h3>
+                                    <p>Masuk untuk mengelola dan menjelajahi layanan foto dan video kami dengan lebih
+                                        mudah.</p>
                                     <form action="{{ route('login') }}" method="POST">
                                         @csrf
                                         <div class="mb-3 mt-3">

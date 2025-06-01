@@ -4,44 +4,50 @@
         <div class="card-body">
             <h3 class="fw-semibold">{{ $title }}</h3>
             <div class="mt-3">
-                <div class="row">
-                    <!-- Kalender kiri -->
-                    <div class="col-md-7">
-                        <div class="d-flex justify-content-between align-items-center mb-2">
-                            <button id="prevMonth" class="btn btn-outline-primary btn-sm">&laquo; Sebelumnya</button>
-                            <h5 id="monthYear"></h5>
-                            <button id="nextMonth" class="btn btn-outline-primary btn-sm">Berikutnya &raquo;</button>
-                        </div>
-                        <div class="d-flex justify-content-between mb-2">
-                            @php
-                                $dayNames = ['Ming', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab'];
-                            @endphp
-                            @foreach ($dayNames as $day)
-                                <div class="text-center fw-bold border rounded py-1 flex-fill">{{ $day }}</div>
-                            @endforeach
+                @if ($reservasiDates->isEmpty())
+                    <div class="alert alert-warning" role="alert">
+                        Belum ada jadwal.
+                    </div>
+                @else
+                    <div class="row">
+                        <!-- Kalender kiri -->
+                        <div class="col-md-7">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <button id="prevMonth" class="btn btn-outline-primary btn-sm">&laquo; Sebelumnya</button>
+                                <h5 id="monthYear"></h5>
+                                <button id="nextMonth" class="btn btn-outline-primary btn-sm">Berikutnya
+                                    &raquo;</button>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                @php
+                                    $dayNames = ['Ming', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab'];
+                                @endphp
+                                @foreach ($dayNames as $day)
+                                    <div class="text-center fw-bold border rounded py-1 flex-fill">{{ $day }}
+                                    </div>
+                                @endforeach
+                            </div>
+
+                            <div id="calendar" class="d-flex flex-wrap">
+                                {{-- Kalender hari-hari akan di-render oleh JS --}}
+                            </div>
                         </div>
 
-                        <div id="calendar" class="d-flex flex-wrap">
-                            {{-- Kalender hari-hari akan di-render oleh JS --}}
+                        <!-- Detail reservasi kanan -->
+                        <div class="col-md-5">
+                            <h4>Detail Reservasi</h4>
+                            <div id="detail-info">
+                                <p class="text-muted">Klik tanggal pada kalender untuk melihat detail reservasi.</p>
+                            </div>
                         </div>
                     </div>
-
-                    <!-- Detail reservasi kanan -->
-                    <div class="col-md-5">
-                        <h4>Detail Reservasi</h4>
-                        <div id="detail-info">
-                            <p class="text-muted">Klik tanggal pada kalender untuk melihat detail reservasi.</p>
-                        </div>
-                    </div>
-                </div>
+                @endif
             </div>
         </div>
     </div>
     <style>
-        /* Bootstrap based calendar day style */
         #calendar>div.calendar-day {
             border: 1px solid #dee2e6;
-            /* bootstrap border color */
             padding: 10px;
             height: 90px;
             width: calc(100% / 7);
@@ -63,7 +69,6 @@
 
         .badge-diterima {
             background-color: #0d6efd;
-            /* bootstrap primary */
             color: white;
             font-size: 0.75rem;
             padding: 0.25em 0.5em;
@@ -75,7 +80,6 @@
 
         .badge-selesai {
             background-color: #198754;
-            /* bootstrap success */
             color: white;
             font-size: 0.75rem;
             padding: 0.25em 0.5em;

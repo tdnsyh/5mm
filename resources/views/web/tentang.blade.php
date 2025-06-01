@@ -128,7 +128,7 @@
     {{-- mengapa memilih kami --}}
     <section class="py-4 py-md-5">
         <div class="container">
-            <div class="ee">
+            <div class="ffff">
                 <span class="badge text-bg-dark mb-2">Why</span>
                 <h1 class="fw-bold">Mengapa memilih kami?</h1>
                 <hr>

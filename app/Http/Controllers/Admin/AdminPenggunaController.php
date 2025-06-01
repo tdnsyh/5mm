@@ -12,7 +12,7 @@ class AdminPenggunaController extends Controller
 
     public function index()
     {
-        $title = 'Daftar Pengguna';
+        $title = 'Pengguna';
         $users = User::all();
         return view('admin.pengguna', compact('users', 'title'));
     }

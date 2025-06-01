@@ -4,7 +4,7 @@
         <div class="card-body">
             <h3 class="fw-semibold">{{ $title }}</h3>
             <div class="mt-3">
-                <a href="{{ route('portofolio.create') }}" class="btn btn-success mb-3">Tambah</a>
+                <a href="{{ route('portofolio.create') }}" class="btn btn-primary mb-3">Tambah portofolio</a>
 
                 @if ($portofolios->isEmpty())
                     <div class="alert alert-warning" role="alert">

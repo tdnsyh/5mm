@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Paket extends Model
 {
     use HasFactory;
-    protected $table = 'paket';
 
+    protected $table = 'paket';
     protected $fillable = ['type', 'kategori', 'nama', 'deskripsi', 'harga'];
 
     public function fotos()

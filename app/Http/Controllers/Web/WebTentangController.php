@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 
 class WebTentangController extends Controller
 {
-    public function  index(){
+    public function  index()
+    {
         $title = 'Tentang 5MM Project';
         return view('web.tentang', compact('title'));
     }

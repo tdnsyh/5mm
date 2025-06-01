@@ -10,7 +10,6 @@ class PaketFoto extends Model
     use HasFactory;
 
     protected $fillable = ['paket_id', 'path'];
-
     protected $table = 'paket_foto';
 
     public function paket()

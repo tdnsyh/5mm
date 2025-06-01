@@ -83,13 +83,13 @@ class AdminPortofolioController extends Controller
 
     public function destroy(Portofolio $portofolio)
     {
-    foreach ($portofolio->photos as $photo) {
-        Storage::disk('public')->delete($photo->path);
-        $photo->delete();
-    }
+        foreach ($portofolio->photos as $photo) {
+            Storage::disk('public')->delete($photo->path);
+            $photo->delete();
+        }
 
-    $portofolio->delete();
+        $portofolio->delete();
 
-    return redirect()->route('portofolio.index')->with('success', 'Portofolio dan semua foto dihapus.');
+        return redirect()->route('portofolio.index')->with('success', 'Portofolio dan semua foto dihapus.');
     }
 }

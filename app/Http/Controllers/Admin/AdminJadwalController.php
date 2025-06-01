@@ -16,11 +16,6 @@ class AdminJadwalController extends Controller
             ->get()
             ->groupBy('tanggal_reservasi')
             ->map(function ($items) {
-                // Prioritas status untuk badge:
-                // Jika ada 'selesai' maka tampilkan 'selesai'
-                // else jika ada 'diterima' tampilkan 'diterima'
-                // else jika ada 'menunggu' tampilkan 'menunggu'
-                // else jika ada 'ditolak' tampilkan 'ditolak'
                 $prioritas = ['selesai', 'diterima', 'menunggu', 'ditolak'];
 
                 foreach ($prioritas as $status) {
@@ -28,8 +23,6 @@ class AdminJadwalController extends Controller
                         return $status;
                     }
                 }
-
-                // fallback (jika ada status lain)
                 return $items->first()->status;
             });
 

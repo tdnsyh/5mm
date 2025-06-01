@@ -9,7 +9,8 @@ use App\Models\UserData;
 
 class WebProfilController extends Controller
 {
-    public function  profil(){
+    public function  profil()
+    {
         $title = 'Profil';
         $user = Auth::user();
         $userData = $user->userData;

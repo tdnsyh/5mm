@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Admin\AdminArtikelController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AdminJadwalController;
@@ -9,8 +10,6 @@ use App\Http\Controllers\Admin\AdminPembayaranController;
 use App\Http\Controllers\Admin\AdminPenggunaController;
 use App\Http\Controllers\Admin\AdminPesananController;
 use App\Http\Controllers\Admin\AdminPortofolioController;
-use App\Http\Controllers\Admin\AdminTestimoniController;
-use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Web\WebArtikelController;
 use App\Http\Controllers\Web\WebIndexController;
 use App\Http\Controllers\Web\WebKeranjangController;
@@ -72,7 +71,6 @@ Route::middleware(['auth', RoleMiddleware::class . ':admin'])->group(function ()
     Route::resource('/admin/paket', AdminPaketController::class);
     Route::resource('/admin/artikel', AdminArtikelController::class);
     Route::resource('/admin/portofolio', AdminPortofolioController::class);
-    Route::get('/admin/testimoni', [AdminTestimoniController::class, 'index']);
     Route::resource('/admin/pengguna', AdminPenggunaController::class);
     Route::get('/admin/laporan', [AdminLaporanController::class, 'index']);
 });

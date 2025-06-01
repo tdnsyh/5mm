@@ -23,15 +23,15 @@ class AdminPesananController extends Controller
 
     public function konfirmasi(Request $request, $id)
     {
-    $reservasi = Reservasi::findOrFail($id);
-    $status = $request->input('aksi');
+        $reservasi = Reservasi::findOrFail($id);
+        $status = $request->input('aksi');
 
-    if (in_array($status, ['diterima', 'ditolak'])) {
-        $reservasi->update(['status' => $status]);
-        return back()->with('success', 'Reservasi berhasil diperbarui.');
-    }
+        if (in_array($status, ['diterima', 'ditolak'])) {
+            $reservasi->update(['status' => $status]);
+            return back()->with('success', 'Reservasi berhasil diperbarui.');
+        }
 
-    return back()->with('error', 'Status tidak valid.');
+        return back()->with('error', 'Status tidak valid.');
     }
 
     public function show($id)
@@ -54,5 +54,4 @@ class AdminPesananController extends Controller
 
         return redirect()->route('admin.pesanan', $reservasi->id)->with('success', 'Status berhasil diperbarui.');
     }
-
 }

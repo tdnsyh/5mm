@@ -18,17 +18,17 @@ class WebArtikelController extends Controller
 
     public function detail($kategori, $id, $judul)
     {
-    $berita = Artikel::findOrFail($id);
+        $berita = Artikel::findOrFail($id);
 
-    if (Str::slug($berita->kategori) != $kategori) {
-        abort(404);
-    }
+        if (Str::slug($berita->kategori) != $kategori) {
+            abort(404);
+        }
 
-    $beritaLainnya = Artikel::where('id', '!=', $id)
-                           ->take(3)
-                           ->get();
+        $beritaLainnya = Artikel::where('id', '!=', $id)
+                            ->take(3)
+                            ->get();
 
-    $title = $berita->judul;
-    return view('web.artikel-detail', compact('berita', 'title', 'beritaLainnya'));
+        $title = $berita->judul;
+        return view('web.artikel-detail', compact('berita', 'title', 'beritaLainnya'));
     }
 }

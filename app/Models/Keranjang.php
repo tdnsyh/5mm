@@ -10,7 +10,6 @@ class Keranjang extends Model
     use HasFactory;
 
     protected $table = 'keranjang';
-
     protected $fillable = ['user_id', 'paket_id', 'jumlah'];
 
     public function user()

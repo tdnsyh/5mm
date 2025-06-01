@@ -26,16 +26,16 @@ class WebKeranjangController extends Controller
     public function tambah($id)
     {
 
-    $item = Keranjang::where('user_id', Auth::id())->where('paket_id', $id)->first();
+        $item = Keranjang::where('user_id', Auth::id())->where('paket_id', $id)->first();
 
-    if ($item) {
-        $item->jumlah += 1;
-        $item->save();
-    } else {
-        Keranjang::create([
-            'user_id' => Auth::id(),
-            'paket_id' => $id,
-            'jumlah' => 1
+        if ($item) {
+            $item->jumlah += 1;
+            $item->save();
+        } else {
+            Keranjang::create([
+                'user_id' => Auth::id(),
+                'paket_id' => $id,
+                'jumlah' => 1
         ]);
     }
 
@@ -93,17 +93,18 @@ class WebKeranjangController extends Controller
 
     public function formPembayaran($id)
     {
-    $reservasi = Reservasi::where('id', $id)
-        ->where('user_id', Auth::id())
-        ->where('status', 'diterima')
-        ->firstOrFail();
+        $reservasi = Reservasi::where('id', $id)
+            ->where('user_id', Auth::id())
+            ->where('status', 'diterima')
+            ->firstOrFail();
 
-        $title='Form Pembayaran';
+            $title='Form Pembayaran';
 
-    return view('web.form-pembayaran', compact('reservasi','title'));
+        return view('web.form-pembayaran', compact('reservasi','title'));
     }
 
-    public function  pesananSaya(){
+    public function  pesananSaya()
+    {
         $title = 'Pesanan Saya';
         $userId = Auth::id();
 
@@ -127,28 +128,28 @@ class WebKeranjangController extends Controller
 
     public function prosesPembayaran(Request $request, $id)
     {
-    $request->validate([
-        'metode_pembayaran' => 'required|in:transfer,cash',
-        'bukti_transfer' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
-    ]);
+        $request->validate([
+            'metode_pembayaran' => 'required|in:transfer,cash',
+            'bukti_transfer' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+        ]);
 
-    $reservasi = Reservasi::where('id', $id)
-        ->where('user_id', Auth::id())
-        ->where('status', 'diterima')
-        ->firstOrFail();
+        $reservasi = Reservasi::where('id', $id)
+            ->where('user_id', Auth::id())
+            ->where('status', 'diterima')
+            ->firstOrFail();
 
-    $path = null;
-    if ($request->metode_pembayaran === 'transfer' && $request->hasFile('bukti_transfer')) {
-        $path = $request->file('bukti_transfer')->store('bukti-transfer', 'public');
-    }
+        $path = null;
+        if ($request->metode_pembayaran === 'transfer' && $request->hasFile('bukti_transfer')) {
+            $path = $request->file('bukti_transfer')->store('bukti-transfer', 'public');
+        }
 
-    $reservasi->update([
-        'metode_pembayaran' => $request->metode_pembayaran,
-        'status_pembayaran' => 'dibayar',
-        'bukti_transfer' => $path,
-    ]);
+        $reservasi->update([
+            'metode_pembayaran' => $request->metode_pembayaran,
+            'status_pembayaran' => 'dibayar',
+            'bukti_transfer' => $path,
+        ]);
 
-    return redirect()->route('user.pesanan')->with('success', 'Pembayaran berhasil dikonfirmasi.');
+        return redirect()->route('user.pesanan')->with('success', 'Pembayaran berhasil dikonfirmasi.');
     }
 
     public function createTestimoni($id)
@@ -157,7 +158,7 @@ class WebKeranjangController extends Controller
         $reservasi = Reservasi::with('paket')->findOrFail($id);
 
         $existing = Testimoni::where('user_id', Auth::id())
-            ->where('reservasi_id', $reservasi->id) // Fix: ganti dari $reservasi->reservasi_id
+            ->where('reservasi_id', $reservasi->id)
             ->exists();
 
         if ($existing) {
@@ -172,7 +173,7 @@ class WebKeranjangController extends Controller
         $reservasi = Reservasi::findOrFail($id);
 
         $exists = Testimoni::where('user_id', Auth::id())
-            ->where('reservasi_id', $reservasi->id) // Fix: harus 'reservasi_id'
+            ->where('reservasi_id', $reservasi->id)
             ->exists();
 
         if ($exists) {

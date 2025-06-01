@@ -1,10 +1,6 @@
 <x-layout-web>
     <x-slot:title>{{ $title }}</x-slot:title>
     <x-navbar-web></x-navbar-web>
-    <style>
-
-    </style>
-
     {{-- hero section --}}
     <section class="pt-3">
         <div class="container-fluid">

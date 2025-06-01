@@ -17,13 +17,11 @@ class Testimoni extends Model
         'rating',
     ];
 
-    // Relasi ke User
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    // Relasi ke Paket
     public function paket()
     {
         return $this->belongsTo(Paket::class);
